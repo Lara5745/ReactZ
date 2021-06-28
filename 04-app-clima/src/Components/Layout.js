@@ -54,7 +54,7 @@ const Layout=()=> {
                             </Grid.Column>
                         </Grid>
                     </Segment>
-                {showSearch && <Results data={data}/>}
+                {showSearch && <Results data={data}/>} //Condicional de JSX
                 </Grid.Column>
             </Grid>
         </>
