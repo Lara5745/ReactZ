@@ -59,6 +59,7 @@ const Layout=()=> {
                             </Grid.Column>
                         </Grid>
                     </Segment>
+<<<<<<< HEAD
                 {showSearch && <Results data={data}/>}
                 {showSearch && <Mapa nombre={data.name} lon={data.coord.lon} lat={data.coord.lat}/>}
 
@@ -66,6 +67,9 @@ const Layout=()=> {
                     <Message.Header>Aviso</Message.Header>
                     <p>No hay información</p>
                 </Message>}
+=======
+                {showSearch && <Results data={data}/>} //Condicional de JSX
+>>>>>>> df56095432c32f37964e9b5f139067fdbcc96604
                 </Grid.Column>
             </Grid>
         </>
