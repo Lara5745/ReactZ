@@ -12,8 +12,6 @@
 /build
 
 # misc
-#Variable de entorno creada por nosotros V
-.env 
 .DS_Store
 .env.local
 .env.development.local

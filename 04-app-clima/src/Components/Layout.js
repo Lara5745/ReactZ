@@ -1,14 +1,17 @@
+// Results.js Se ejecuta dentro de este archivo
 import React, {useState} from 'react';
-import { Grid, Header,Segment,Form ,Button,Icon} from 'semantic-ui-react'; 
+import { Grid, Header,Segment,Form ,Button,Icon,Message} from 'semantic-ui-react'; 
 import { Input } from 'semantic-ui-react' //Para hacer importaciones que no son default -> {}
 import Api from "../Utils/Api";
 import Results from './Results';
+import Mapa from "./Mapa";
 
 const Layout=()=> {
 
     const [ciudad, setCiudad] = useState("");
     const [data, setData] = useState({});
     const [showSearch, setShowSearch] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     const inputHandler = (e) => {
         // console.log(e.target.value);
@@ -24,14 +27,16 @@ const Layout=()=> {
             console.log(respuesta);
             setData(respuesta.data);
             setShowSearch(true);
+            setShowError(false);
         })
         .catch((err)=>{
             console.log(err);
             setShowSearch(false);
+            setShowError(true);
         });
     };
 
-    return (
+    return ( //Aqui adentro se usa la sintaxis de JSX por ende las condicionales con con {}
         <>
             
             <Input icon='search' placeholder='Search...' />
@@ -55,6 +60,12 @@ const Layout=()=> {
                         </Grid>
                     </Segment>
                 {showSearch && <Results data={data}/>}
+                {showSearch && <Mapa nombre={data.name} lon={data.coord.lon} lat={data.coord.lat}/>}
+
+                {showError && <Message color="red">
+                    <Message.Header>Aviso</Message.Header>
+                    <p>No hay información</p>
+                </Message>}
                 </Grid.Column>
             </Grid>
         </>
