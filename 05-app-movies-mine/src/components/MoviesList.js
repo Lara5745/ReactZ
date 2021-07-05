@@ -6,13 +6,14 @@ import Api from '../utils.js/Api';
 import NavBar from './NavBar';
 
 import ItemMovie from './ItemMovie';
-import { CardGroup,Card,Segment } from 'semantic-ui-react';
+import { Card,Segment } from 'semantic-ui-react';
 
 const MoviesList=()=> {
-    const [movieslist, setMovieslist] = useState([])
 
+    const [movieslist, setMovieslist] = useState([]);
+    let peli = prompt("Qué película quieres?");
     useEffect(() => {
-        fetchData("Batman");
+        fetchData(peli);
     }, []);
 
     const fetchData =(title) =>{
