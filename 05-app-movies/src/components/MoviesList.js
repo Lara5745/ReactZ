@@ -1,17 +1,21 @@
-//Primer paso para la creación de componentes *
-import React, { useState,useEffect } from 'react';
+//##########Primer paso para la creación de componentes *
 
-import Api from '../utils.js/Api';
+// ~~~Jerarquía de IMPORTS~~~
 
-import NavBar from './NavBar';
+import React, { useState,useEffect } from 'react'; //~~Componentes por defecto de REACT
 
-import ItemMovie from './ItemMovie';
+import ItemMovie from './ItemMovie'; //~~Dependencias
 import { CardGroup,Card,Segment } from 'semantic-ui-react';
 
-const MoviesList=()=> {
-    const [movieslist, setMovieslist] = useState([])
+import Api from '../utils.js/Api'; //~~Componentes propios. Se usa {} ya que no es una exportación por defecto y se llama a un item específico
+import NavBar from './NavBar';
 
-    useEffect(() => {
+
+
+const MoviesList=()=> { //Componente funcional de react RFC
+    const [movieslist, setMovieslist] = useState([]); //Hooks, creación de Estado movieslist. Después de set SIEMPRE MAYÚS.
+
+    useEffect(() => { //Hook, detecta el cambio de un estado, pero como el [] esta vacio lo que hace es ejecuatrlo al momento
         fetchData("Batman");
     }, []);
 
