@@ -4,10 +4,10 @@
 
 import React, { useState,useEffect } from 'react'; //~~Componentes por defecto de REACT
 
-import ItemMovie from './ItemMovie'; //~~Dependencias
-import { CardGroup,Card,Segment } from 'semantic-ui-react';
+import { CardGroup,Card,Segment } from 'semantic-ui-react'; //~~Dependencias
 
 import Api from '../utils.js/Api'; //~~Componentes propios. Se usa {} ya que no es una exportación por defecto y se llama a un item específico
+import ItemMovie from './ItemMovie'; 
 import NavBar from './NavBar';
 
 
@@ -16,7 +16,7 @@ const MoviesList=()=> { //Componente funcional de react RFC
     const [movieslist, setMovieslist] = useState([]); //Hooks, creación de Estado movieslist. Después de set SIEMPRE MAYÚS.
 
     useEffect(() => { //Hook, detecta el cambio de un estado, pero como el [] esta vacio lo que hace es ejecuatrlo al momento
-        fetchData("Batman");
+        fetchData("loki");
     }, []);
 
     const fetchData =(title) =>{
