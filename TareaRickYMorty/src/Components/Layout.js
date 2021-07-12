@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import { Grid, Header,Segment,Form ,Button,Icon,Message} from 'semantic-ui-react'; 
 
-import Api from "../Utils/Api";
+import Api from "../utils/Api";
 import Results from './Results';
 
 const Layout=()=> {
